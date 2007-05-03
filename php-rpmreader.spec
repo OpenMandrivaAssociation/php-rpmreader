@@ -6,7 +6,7 @@
 Summary:	RPM file meta information reader for PHP
 Name:		php-%{modname}
 Version:	0.3
-Release:	%mkrel 8
+Release:	%mkrel 9
 Group:		Development/PHP
 URL:		http://pecl.php.net
 License:	PHP License
