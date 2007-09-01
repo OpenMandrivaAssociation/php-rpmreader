@@ -6,7 +6,7 @@
 Summary:	RPM file meta information reader for PHP
 Name:		php-%{modname}
 Version:	0.3
-Release:	%mkrel 11
+Release:	%mkrel 12
 Group:		Development/PHP
 URL:		http://pecl.php.net
 License:	PHP License
@@ -26,15 +26,7 @@ file.
 %setup -q -n rpmreader
 
 %build
-export CFLAGS="%{optflags}"
-export CXXFLAGS="%{optflags}"
-export FFLAGS="%{optflags}"
-
-%if %mdkversion >= 200710
-export CFLAGS="$CFLAGS -fstack-protector"
-export CXXFLAGS="$CXXFLAGS -fstack-protector"
-export FFLAGS="$FFLAGS -fstack-protector"
-%endif
+%serverbuild
 
 phpize
 %configure2_5x --with-libdir=%{_lib} \
