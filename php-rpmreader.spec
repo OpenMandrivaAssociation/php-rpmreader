@@ -13,6 +13,7 @@ URL:		http://pecl.php.net
 Source0:	rpmreader.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 rpmreader is an extension that provides the ability to read RedHat Package
