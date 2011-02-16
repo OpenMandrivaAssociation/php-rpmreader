@@ -5,12 +5,12 @@
 
 Summary:	RPM file meta information reader for PHP
 Name:		php-%{modname}
-Version:	0.3
-Release:	%mkrel 30
+Version:	0.4
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net
-Source0:	rpmreader.tar.bz2
+Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -23,7 +23,8 @@ file.
 
 %prep
 
-%setup -q -n rpmreader
+%setup -q -n %{modname}-%{version}
+[ "../package*.xml" != "/" ] && mv ../package*.xml .
 
 %build
 %serverbuild
@@ -36,7 +37,7 @@ phpize
 mv modules/*.so .
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot} 
+rm -rf %{buildroot} 
 
 install -d %{buildroot}%{_libdir}/php/extensions
 install -d %{buildroot}%{_sysconfdir}/php.d
@@ -60,11 +61,10 @@ if [ "$1" = "0" ]; then
 fi
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-[ "../package.xml" != "/" ] && rm -f ../package.xml
+rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
-%doc examples CREDITS package.xml
+%doc examples CREDITS package*.xml
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
