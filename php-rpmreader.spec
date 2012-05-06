@@ -9,8 +9,9 @@ Version:	0.4
 Release:	%mkrel 6
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net
+URL:		http://pecl.php.net/package/rpmreader
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
+Patch0:		rpmreader-0.4-php54x.diff
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -25,6 +26,8 @@ file.
 
 %setup -q -n %{modname}-%{version}
 [ "../package*.xml" != "/" ] && mv ../package*.xml .
+
+%patch0 -p0
 
 %build
 %serverbuild
