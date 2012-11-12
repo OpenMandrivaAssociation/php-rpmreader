@@ -1,0 +1,11 @@
+--- rpmreader.c	2011-02-11 22:22:02.000000000 +0100
++++ rpmreader.c.oden	2012-05-06 11:48:42.532736046 +0200
+@@ -42,7 +42,7 @@
+ /* True global variables */
+ static int le_rpmreader;
+ 
+-static function_entry rpmreader_functions[] = {
++static zend_function_entry rpmreader_functions[] = {
+ 	PHP_FE(rpm_close, NULL)
+ 	PHP_FE(rpm_get_tag, NULL)
+ 	PHP_FE(rpm_is_valid, NULL)
