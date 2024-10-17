@@ -9,7 +9,7 @@ Version:	0.4
 Release:	7
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/rpmreader
+URL:		https://pecl.php.net/package/rpmreader
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Patch0:		rpmreader-0.4-php54x.diff
 BuildRequires:	php-devel >= 3:5.2.0
