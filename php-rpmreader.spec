@@ -12,6 +12,11 @@ License:	PHP License
 URL:		https://pecl.php.net/package/rpmreader
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Patch0:		rpmreader-0.4-php54x.diff
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
